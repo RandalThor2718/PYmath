@@ -44,8 +44,9 @@ def mandelbrot(xmin=-2.0, xmax=0.5, ymin=-1.25, ymax=1.25,
 def plot_mandelbrot(counts, max_iter=200, cmap="turbo", save_path=None):
     """Display (and optionally save) the Mandelbrot set image."""
     plt.figure(figsize=(8, 8))
+    # Set origin='lower' so the y-axis is oriented upwards (numeric ymin at bottom)
     plt.imshow(counts, cmap=cmap, extent=(-2.0, 0.5, -1.25, 1.25),
-               interpolation="bilinear")
+               interpolation="bilinear", origin="lower")
     plt.axis("off")
     plt.tight_layout()
 
